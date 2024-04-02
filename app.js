@@ -12,12 +12,9 @@ dotenv.config();
 const app = express();
 app.use(cookieParser());
 const port =3000;
-const corsOptions = {
-  origin: 'https://auth-beta-teal.vercel.app',
-  credentials: true,  
-};
+ 
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use("/api", router);
 app.use(session({
